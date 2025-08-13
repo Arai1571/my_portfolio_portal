@@ -25,16 +25,20 @@ a {
  ------------------- */
 /*幅を絞りたい時のクラス*/
 .wrapper {
-
-
+    max-width: 880px;
+    margin: 0 auto;
 }
 
 /* 全体を囲むクラス */
 .container {
     /* サイト全体の背景色 */
-
+    background-color: #003e;
+    background-image: url(../images/back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     /* 背景色と背景画像をブレンド */
-
+    background-blend-mode: darken;
 }
 
 
@@ -43,28 +47,34 @@ a {
  ------------------- */
 .header {
     /* ロゴとメニューを横並び */
-
+    display: flex;
+    height: 80px;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .header h1 {
-
+    width: 20%;
+    text-align: center;
 }
 
 .header h1 img {
-
+    width: 100%;
 }
 
 .header nav {
-
+    width: 70%;
 }
 
 .header nav ul {
     /* メニューリストを横並びに */
-
+    display: flex;
+    gap: 20%;
+    justify-content: center;
 }
 
 .header ul a {
-
+    font-size: .9rem;
 }
 
 
@@ -76,110 +86,144 @@ a {
  ------------------- */
 .pickup-area {
     /* 横縦10：6の比率 */
-
+    aspect-ratio: 10 / 7;
     /* 縦並びにして左右中央に寄せる */
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
 .slide-area {
-
+    width: 100%;
+    height: 90%;
+    border-radius: 8px;
     /* 画像群の相対基準点 */
-
+    position: relative;
+    box-shadow: 1px 1px 6px #0bdc;
 }
 
 .slide-area img {
-
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
     /* アスペクト比は崩さずトリミング */
-
+    object-fit: cover;
+    object-position: center;
     /* 画像群は同じところに重ねて集める */
-
+    position: absolute;
     /* 基本は透明で隠れている */
-
+    opacity: 0;
     /* 1.5秒かけて透明度がじわっと変化する */
-
+    transition: opacity 1.5s ease-in-out;
 }
 
 /* activeクラスが付与されたimgは表示 */
 .slide-area img.active {
-
+    opacity: 1;
 }
 
 .slide-button {
-
+    height: 10%;
     /* span(スライドボタン)を横並びで中央に集める */
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide-button span {
     /* 幅・高さが効くように性質変更 */
-
+    display: inline-block;
+    width: 16px;
     /* 横縦比率 1：1*/
-
+    aspect-ratio: 1/1;
+    background: #fff;
     /* 正方形に対しまん丸にする */
-
+    border-radius: 50%;
     /* マウスを重ねると指マークにする */
-
+    cursor: pointer;
 }
 
 /* activeクラスが付与されたspanは色が濃い */
 .slide-button span.active {
-
+    background: #333;
 }
 
 /* -------------------
  portfolios-area
  ------------------- */
 .portfolios-area {
-
+    padding: 2% 4%;
 }
 
 .portfolios-area h2 {
-
+    text-align: center;
+    margin-bottom: 1.6%;
 }
 
+
 .portfolio-grid {
-
+    display: grid;
     /* 最小200px～最大240pxの幅で調整され、横に繰り返せるだけ並べる(auto-fit) */
-
+    grid-template-columns: repeat(auto-fit, minmax(240px, 480px));
     /* 要素を中央に集める */
-
+    justify-content: center;
+    gap: 48px 16px;
 }
 
 .grid-box {
     /* 縦並び */
-
+    display: flex;
+    flex-direction: column;
     /* 上下は端から端にバランスよく要素を配置 */
-
+    justify-content: space-between;
     /* 左右は左寄せ */
-
+    align-items: flex-start;
     /* 横縦比1：2 */
+    aspect-ratio: 10 / 8;
+    padding: 12px;
+    border-radius: 8px;
 
     /* 背景色は白だが透明度が高い */
-
+    background: #fff2;
     /* 背景をすりガラス風の加工 */
-
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-left: 1px #fff5 solid;
+    border-right: 1px #fff3 solid;
+    border-bottom: 1px #fff1 solid;
 }
 
 .grid-box img {
-
+    display: inline-block;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 10 / 6;
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 2%;
 }
 
 .grid-box h3 {
-
+    font-size: 1.2em;
     /* タイトルが短くても最小の高さを担保 */
-
+    min-height: 2.6em;
     /* flexで縮んだ幅を100%に指名してから中央揃え */
-
+    width: 100%;
+    text-align: center;
 }
 
 .grid-box p {
-
+    font-size: .9em;
     /* 説明文章が短くても最小の高さを担保 */
-
+    min-height: 3.8em;
 }
 
 .grid-box a {
-
+    background: #88f;
+    padding: 2% 4%;
+    border-radius: 6px;
+    font-size: .8em;
 }
 
 /* -------------------
@@ -187,15 +231,18 @@ a {
  ------------------- */
 .about-area {
     /* 縦並び、左右上下中央揃え */
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-area img {
-
+    margin: 80px 0 20px;
     /* 少し小さめの画像にする */
-
+    width: 50%;
     /* まん丸にする */
-
+    border-radius: 50%;
 }
 
 /* -------------------
@@ -203,68 +250,86 @@ a {
  ------------------- */
 .footer {
     /* 高さを十分に確保 */
-
+    height: 300px;
+    padding: 2% 4%;
     /* 縦並びにして上下方向は下に集める */
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     /* 左右方向は中央に集める */
-
+    align-items: center;
 }
 
 .contact {
     /* 要素を横並び */
-
+    display: flex;
+    gap: 16px;
 }
 
 .contact a {
     /* 子要素のimgの配置を上下左右とも中央にする */
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
     /* 幅は小さめ */
-
+    width: 40px;
     /* 正方形にする */
-
+    aspect-ratio: 1 / 1;
     /* まん丸にする */
-
+    border-radius: 50%;
 }
 
 .contact a img {
-
+    display: inline-block;
+    width: 55%;
 }
 
 .copy-right {
-
+    padding: 2%;
+    font-size: .8em;
 }
+
 
 /* -------------------
    トップへ戻るボタン
 ------------------- */
 #to-top-button {
     /* 位置を画面右下に固定 */
-
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
     /* 他の要素より手前に表示 */
 
     /* 円の形とサイズ */
-
-    /* 半透明の黒 */
-
+    width: 50px;
+    height: 50px;
+    background-color: rgba(51, 51, 51, 1);
+     /* 半透明の黒 */
+     border-radius: 50%;
     /* 正円にする */
 
     /* 初期状態では非表示にする */
-
+    opacity: 0;
+    visibility: hidden;
 
     /* 表示/非表示を滑らかにアニメーションさせる */
-    
+    transition: opacity 0.3s, visibility 0.3s, background-color 0;
 
     /* カーソルをポインターにする */
-
+    cursor: pointer;
 }
 
 /* JavaScriptで.showクラスがついたら表示する */
 #to-top-button.show {
-
+    opacity: 1;
+    visibility: visible;
 }
 
 /* マウスが乗った時のスタイル */
 #to-top-button:hover {
+    background-color: rgba(51, 51, 51, 1);
     /* 少し濃くする */
 
 }
@@ -272,14 +337,20 @@ a {
 
 /* CSSで上向きの矢印を描画 */
 #to-top-button::before {
-
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
     /* 線のスタイルで三角形を作る */
-
+    border: solid #fff;
     /* 矢印の色 */
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
 
     /* 三角形を回転させて上向きにする & 位置を調整 */
-
+    transform: translate(-50%, -60%) rotate(-135deg);
 }
 
 
@@ -289,23 +360,24 @@ a {
 
 @media (max-width:999px) {
     .wrapper {
-
+        max-width: none;
+        padding: 2% 4%;
     }
 
-    .header{
-
+    .header {
+        justify-content: space-between;
     }
 
     .portfolio-grid {
         /* Gridを1列のみの設定 */
-
+        grid-template-columns: 1fr;
     }
 
-    .grid-box{
-
+    .grid-box {
+        aspect-ratio: 10/12;
     }
 
-    .footer{
-
+    .footer {
+        height: 150px;
     }
 }

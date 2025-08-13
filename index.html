@@ -17,13 +17,14 @@
         <header class="header wrapper">
 
             <!-- タイトル画像 -->
-
+            <h1><img src="images/logo.png" alt=""></h1>
 
             <!-- メインナビゲーション -->
             <nav>
-
-
-
+                <ul>
+                    <li><a href="#portfolios">portfolios</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
             </nav>
 
         </header>
@@ -34,26 +35,74 @@
 
             <!-- ピックアップコーナー（スライドショー） -->
             <section class="pickup-area wrapper">
-
-
-
-
-
+                <div class="slide-area">
+                    <!-- JavaScriptでimgを自動追加 -->
+                </div>
+                <div class="slide-button">
+                    <!-- JavaScriptでspanを自動追加 -->
+                </div>
             </section>
             <!-- ピックアップコーナー（スライドショー） の終わり-->
 
             <!-- ポートフォリオ紹介 -->
             <section id="portfolios" class="portfolios-area">
+                <h2>ポートフォリオ</h2>
 
+                <!-- グリットで整列 -->
+                <div class="portfolio-grid">
+
+                    <!-- 一つ目 -->
+                    <div class="grid-box">
+                        <h3>THE Animal Mirror</h3>
+                        <img src="images/works/animal_mirror.png" alt="THE animal_mirror">
+                        <p>受講生との共同制作です。Playerはフィールドの動物に変身し、個性的な能力で様々なギミックを乗り越えます。</p>
+                        <a href="">作品詳細はこちら</a>
+                    </div>
+
+                    <!-- ２つ目 -->
+                    <div class="grid-box">
+                        <h3>NINJA SHIPPU BLADE</h3>
+                        <img src="images/works/ninjya_shippu_blade.png" alt="Ninja Shippu Blade">
+                        <p>RPG要素のあるHD2Dのタイピングゲームです。主人公の忍者を強化しながら、楽しくライピングスキルをとことん高めましょう！</p>
+                        <a href="">作品詳細はこちら</a>
+                    </div>
+
+                    <!-- ３つ目 -->
+                    <div class="grid-box">
+                        <h3>The Zeroth Wonder</h3>
+                        <img src="images/works/the_zeroth_Wonder.png" alt="The Zeroth Wonder">
+                        <p>その学校には隠れたゼロ番目の不思議があった。日常と怪異の境界がじわじわとなくなっていく恐怖を体感しましょう。</p>
+                        <a href="">作品詳細はこちら</a>
+                    </div>
+
+                    <!-- ４つ目 -->
+                    <div class="grid-box">
+                        <h3>Delivery Spirits</h3>
+                        <img src="images/works/delivery_spirits.png" alt="delivery_spirits">
+                        <p>宅配をテーマにしたちょっとおバカなゲームです。事故に注意しながら適切に荷物をぶん投げましょう。</p>
+                        <a href="">作品詳細はこちら</a>
+                    </div>
+
+                    <!-- ５つ目 -->
+                    <div class="grid-box">
+                        <h3>ASTRO SHOOTER</h3>
+                        <img src="images/works/astro_shooter.png" alt="ASTRO SHOOTER">
+                        <p>宇宙ステーションの中で目覚めた魔女は魔法も記憶も失っていた。バード2Dガンシューティングで物語の謎を解きましょう。</p>
+                        <a href="">作品詳細はこちら</a>
+                    </div>
+                    
+                </div>
+                <!-- グリットで整列の終わり -->
 
             </section>
             <!-- ポートフォリオ紹介 の終わり-->
 
-
             <!-- 自分の紹介（アバウト） -->
             <section class="about wrapper">
-
-
+                <div class="about-area">
+                    <img src="images/profile_icon.png" alt="自分のアイコン">
+                    <h2>Masami Sakamaki</h2>
+                </div>
             </section>
             <!-- 自分の紹介（アバウト） の終わり-->
 
@@ -62,18 +111,25 @@
 
         <!-- フッター -->
         <footer class="footer">
-            
-
+            <div id="contact" class="contact">
+                <a href=""><img src="images/mail.png" alt="mail"></a>
+                <a href=""><img src="images/github.png" alt="github"></a>
+                <a href=""><img src="images/x.png" alt="x"></a>
+                <a href=""><img src="images/instagram.png" alt="insta"></a>
+                <a href=""><img src="images/line.png" alt="line"></a>
+            </div>
+            <div class="copy-right">
+                <p>%copy;Sakamaki's Portfolio Site 2025.08</p>
+            </div>
         </footer>
         <!-- フッター の終わり-->
 
         <!-- トップへ戻るボタン -->
-
+        <a href="#" id="to-top-button"></a>
 
     </div>
     <!-- 全体を包むcontainerクラス の終わり（背景画像） -->
 
-    
     <!-- JavaScriptの連動ファイルの指定 -->
     <script src="js/script.js"></script>
 
