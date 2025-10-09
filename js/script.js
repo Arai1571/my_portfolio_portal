@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================================================
     // --- 設定項目 ---
     const images = [
+        'images/works/battlecart.jpg',
         'images/works/jewelryhunter_image.png',       // 作品画像1
         // 'images/works/ninjya_shippu_blade_top.png', // 作品画像2
         // 'images/works/the_zeroth_wonder_top.png',   // 作品画像3
