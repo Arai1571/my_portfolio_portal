@@ -22,8 +22,8 @@
             <!-- メインナビゲーション -->
             <nav>
                 <ul>
-                    <li><a href="#portfolios">portfolios</a></li>
-                    <li><a href="#contact">contact</a></li>
+                    <li><a href="#Portfolios">Portfolios</a></li>
+                    <li><a href="#Contact">Contact</a></li>
                 </ul>
             </nav>
 
@@ -45,51 +45,47 @@
             <!-- ピックアップコーナー（スライドショー） の終わり-->
 
             <!-- ポートフォリオ紹介 -->
-            <section id="portfolios" class="portfolios-area">
+            <section id="Portfolios" class="Portfolios-area">
                 <h2>Portfolios</h2>
 
                 <!-- グリットで整列 -->
-                <div class="portfolio-grid">
+                <div class="Portfolio-grid">
 
-                    <div class="grid-box">
-                        <h3>Battle Cart_Unity6バージョン</h3>
+                    <div class="grid-box" data-modal="battlecart">
+                        <h3>Battle Cart</h3>
                         <img src="images/works/battlecart.jpg" alt="Battle Cart">
                         <p>3Dのカーラーニングゲームです。逆走者を撃破しながらどこまで走行距離を伸ばせるかを競います。</p>
-                        <a href="https://github.com/Arai1571/BattleCart">作品詳細はこちら</a>
+                        <a href="https://github.com/Arai1571/BattleCart">View on GitHub</a>
                     </div>
 
-                    <div class="grid-box">
-                        <h3>Escape Darkness_Unity6バージョン</h3>
+                    <div class="grid-box" data-modal="escapedarkness">
+                        <h3>Escape Darkness</h3>
                         <img src="images/works/escapedarkness_boss.png" alt="Escape Darkness">
-                        <p>暗闇の館を探索する 2DのRPG。 限られた視界の中で、鍵を見つけて該当するドアを開け、奥に潜むボスの間を目指します。 追跡してくる敵を避けながら、恐怖と緊張の中を生き延びましょう。</p>
-                        <a href="https://github.com/Arai1571/EscapeDarkness">作品詳細はこちら</a>
+                        <p>暗闇の館を探索する 2DのRPG。 限られた視界の中で、鍵を見つけて該当するドアを開け、奥に潜むボスの間を目指します。 追跡してくる敵を避けながら、恐怖と緊張の中を生き延びましょう。
+                        </p>
+                        <a href="https://github.com/Arai1571/EscapeDarkness">View on GitHub</a>
                     </div>
 
-                    <div class="grid-box">
-                        <h3>JewelryHunter_Unity6バージョン</h3>
+                    <div class="grid-box" data-modal="jewelryhunter">
+                        <h3>JewelryHunter</h3>
                         <img src="images/works/jewelryhunter_image.png" alt="JewelryHunter">
                         <p>横スクロールのアクション2Dです。いくつかの個性的なステージをクリアして高得点を狙う楽しさがあります。</p>
-                        <a href="https://github.com/Arai1571/JewelryHunter_Unity6" target="_blank">作品詳細はこちら</a>
+                        <a href="https://github.com/Arai1571/JewelryHunter_Unity6" target="_blank">View on GitHub</a>
                     </div>
 
-
-
-
-            
-                    <div class="grid-box">
+                    <div class="grid-box" data-modal="thehistorycleaner">
                         <h3>The History Cleaner</h3>
                         <img src="images/works/The HistoryCleaner1.png" alt="The History Cleaner">
                         <p>ゲーム概要</p>
-                        <a href="">作品詳細はこちら</a>
-                    </div> 
+                        <a href="https://github.com/Arai1571/TheHistoryCleaner">View on GitHub</a>
+                    </div>
 
-                    <!-- ５つ目 -->
-                    <!-- <div class="grid-box">
-                        <h3>ASTRO SHOOTER</h3>
-                        <img src="images/works/astro_shooter.png" alt="ASTRO SHOOTER">
-                        <p>宇宙ステーションの中で目覚めた魔女は魔法も記憶も失っていた。バード2Dガンシューティングで物語の謎を解きましょう。</p>
-                        <a href="">作品詳細はこちら</a>
-                    </div> -->
+                    <div class="grid-box" data-modal="Rovo Suvivor">
+                        <h3>Rovo Suvivor</h3>
+                        <img src="" alt="Rovo Suvivor">
+                        <p>ゲーム概要</p>
+                        <a href="https://github.com/Arai1571/My_RovoSuvivor">View on GitHub</a>
+                    </div>
 
                 </div>
                 <!-- グリットで整列の終わり -->
@@ -111,7 +107,7 @@
 
         <!-- フッター -->
         <footer class="footer">
-            <div id="contact" class="contact">
+            <div id="Contact" class="Contact">
                 <a href="mailto:luna.alay1006@gmail.com"><img src="images/mail.png" alt="mail"></a>
                 <a href="https://github.com/Arai1571"><img src="images/github.png" alt="github"></a>
                 <a href=""><img src="images/x.png" alt="x"></a>
@@ -129,6 +125,51 @@
 
     </div>
     <!-- 全体を包むcontainerクラス の終わり（背景画像） -->
+
+    <!-- ===== BattleCart モーダル ===== -->
+    <div class="modal" id="modal-battlecart">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="images/works/battlecart.jpg" alt="Battle Cart">
+            <h3>Battle Cart (Unity 6)</h3>
+            <p>Unity 6で開発した3Dレースゲーム。AIを搭載した敵車との追走、武器システム、物理挙動の最適化などを実装。</p>
+            <a href="https://github.com/Arai1571/BattleCart" target="_blank">View on GitHub →</a>
+        </div>
+    </div>
+
+    <!-- ===== Escape Darkness モーダル ===== -->
+    <div class="modal" id="modal-escapedarkness">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="images/works/escapedarkness_boss.png" alt="Escape Darkness">
+            <h3>Escape Darkness (Unity 6)</h3>
+            <p>暗闇の館を探索する2D RPG。限られた視界の中で恐怖と緊張の生存を体験。</p>
+            <a href="https://github.com/Arai1571/EscapeDarkness" target="_blank">View on GitHub →</a>
+        </div>
+    </div>
+
+    <!-- ===== Jewelry Hunter モーダル ===== -->
+    <div class="modal" id="modal-jewelryhunter">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="images/works/jewelryhunter_image.png" alt="JewelryHunter">
+            <h3>Jewelry Hunter (Unity 6)</h3>
+            <p>横スクロールアクション。多彩なステージで宝石を集めてハイスコアを目指そう。</p>
+            <a href="https://github.com/Arai1571/JewelryHunter_Unity6" target="_blank">View on GitHub →</a>
+        </div>
+    </div>
+
+    <!-- ===== The History Cleaner モーダル ===== -->
+    <div class="modal" id="modal-thehistorycleaner">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="images/works/The HistoryCleaner1.png" alt="The History Cleaner">
+            <h3>The History Cleaner (Unity 6)</h3>
+            <p>時を遡り、過去の罪を清めるために戦う独創的アクションRPG。</p>
+            <a href="https://github.com/Arai1571/TheHistoryCleaner" target="_blank">View on GitHub →</a>
+        </div>
+    </div>
+
 
     <!-- JavaScriptの連動ファイルの指定 -->
     <script src="js/script.js"></script>

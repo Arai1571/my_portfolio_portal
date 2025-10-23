@@ -149,3 +149,31 @@ toTopButton.addEventListener('click', (e) => {
 });
 
 });
+
+// ===== モーダル処理 =====
+const gridBoxes = document.querySelectorAll('.grid-box');
+const modals = document.querySelectorAll('.modal');
+const closeButtons = document.querySelectorAll('.modal .close');
+
+// カードクリック時 → 対応モーダル開く
+gridBoxes.forEach(box => {
+  box.addEventListener('click', () => {
+    const targetId = box.dataset.modal;
+    const modal = document.getElementById(`modal-${targetId}`);
+    if (modal) modal.style.display = 'flex';
+  });
+});
+
+// 閉じるボタン
+closeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.modal').style.display = 'none';
+  });
+});
+
+// 背景クリックでも閉じる
+modals.forEach(modal => {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+});
