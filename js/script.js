@@ -5,10 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================================================
     // --- 設定項目 ---
     const images = [
+        'images/works/robo_readme.png',   
+        'images/works/robo_readme2.png',  
         'images/works/escapedarkness_boss.png',
         'images/works/escapedarkness.png',
         'images/works/battlecart.jpg',
-        'images/works/jewelryhunter_image.png',       
+        'images/works/jewelryhunter_image.png', 
+        'images/works/robo_readme.png',   
+        'images/works/robo_readme2.png',    
         // 'images/works/ninjya_shippu_blade_top.png', 
         // 'images/works/the_zeroth_wonder_top.png',  
         // 'images/works/delivery_spirits_top.png',    
