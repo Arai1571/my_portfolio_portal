@@ -239,92 +239,105 @@ a {
    GRID BOX（カード光るホバー版）
 ================================ */
 .grid-box {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.263);
-  border-radius: 12px;
-  padding: 20px;
-  color: #fff;
-  text-align: left;
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.263);
+    border-radius: 12px;
+    padding: 20px;
+    color: #fff;
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* --- ホバー時の浮き上がり効果 --- */
 .grid-box:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 200, 255, 0.35);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.35);
 }
 
 /* --- 内部の光エフェクト（カードの縁が光る） --- */
 .grid-box::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 2px; /* 光の太さ */
-  background: linear-gradient(135deg, #00c3ff, #6a00ff, #ff00c8);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: destination-out;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    /* 光の太さ */
+    background: linear-gradient(135deg, #00c3ff, #6a00ff, #ff00c8);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 /* --- hoverで光が出現 --- */
 .grid-box:hover::before {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* --- カード内部の画像 --- */
 .grid-box img {
-  width: 100%;
-  aspect-ratio: 10/6;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.6s ease;
-  margin-bottom: 12px;
+    width: 100%;
+    aspect-ratio: 10/6;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.6s ease;
+    margin-bottom: 12px;
 }
 
 /* --- hoverで画像もズーム --- */
 .grid-box:hover img {
-  transform: scale(1.06);
+    transform: scale(1.06);
 }
 
 /* --- タイトルと本文 --- */
 .grid-box h3 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-  text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    text-align: center;
 }
+
 .grid-box p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  flex-grow: 1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex-grow: 1;
 }
 
 /* --- ボタン --- */
 .grid-box a {
-  display: inline-block;
-  padding: 5px 12px;
-  font-size: 0.85em;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  background: transparent;
-  margin-top: 8px;
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 0.85em;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: transparent;
+    margin-top: 8px;
 }
 
 .grid-box a:hover {
-  background: linear-gradient(135deg, #00c3ff, #6a00ff);
-  border-color: transparent;
-  box-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+    background: linear-gradient(135deg, #00c3ff, #6a00ff);
+    border-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
 }
 
+/* ===== ボタンエリア中央寄せ ===== */
+.btn-area {
+    display: flex;
+    justify-content: center;
+    /* 横方向の中央揃え */
+    align-items: center;
+    /* 縦方向の中央揃え（高さが異なる場合でも整う） */
+    gap: 10px;
+    /* ボタンの間の余白 */
+    margin-top: 10px;
+}
 
 /* -------------------
  about-area
@@ -455,112 +468,127 @@ a {
 
 /* ===== モーダル全体 ===== */
 .modal {
-  display: none; /* 初期は非表示 */
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-  transition: opacity 0.3s ease;
+    display: none;
+    /* 初期は非表示 */
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    transition: opacity 0.3s ease;
 }
 
 /* ===== モーダル中身 ===== */
 .modal-content {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 24px;
-  max-width: 600px;
-  width: 90%;
-  color: #fff;
-  text-align: center;
-  position: relative;
-  animation: popIn 0.4s ease;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 600px;
+    width: 90%;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    animation: popIn 0.4s ease;
 }
 
 /* アニメーション */
 @keyframes popIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* 画像 */
 .modal-content img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 16px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
 }
 
 /* 閉じるボタン */
 .modal-content .close {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #ccc;
-  transition: color 0.3s;
-  z-index: 3000;
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s;
+    z-index: 3000;
 }
 
 .modal-content .close:hover {
-  color: #fff;
+    color: #fff;
 }
 
 /* GitHubボタン */
 .modal-content a {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 6px 14px;
-  border-radius: 25px;
-  border: 1px solid #fff;
-  color: #fff;
-  transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 14px;
+    border-radius: 25px;
+    border: 1px solid #fff;
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
 .modal-content a:hover {
-  background: linear-gradient(135deg, #00c3ff, #6a00ff);
-  border-color: transparent;
-  box-shadow: 0 0 10px rgba(0,195,255,0.5);
+    background: linear-gradient(135deg, #00c3ff, #6a00ff);
+    border-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
 }
 
 /* ===== モーダルスライダー設定 ===== */
 .modal-slider {
-  position: relative;
-  max-width: 100%;
-  margin: 0 auto 16px;
-  overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 16px;
+    overflow: hidden;
 }
 
 .modal-slider .slide {
-  width: 100%;
-  display: none;           /* 全部非表示にしておく */
-  border-radius: 8px;
-  object-fit: cover;
+    width: 100%;
+    display: none;
+    /* 全部非表示にしておく */
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 /* 表示中の画像だけ見せる */
 .modal-slider .slide.active {
-  display: block;
+    display: block;
 }
 
 /* 前へ・次へボタン */
 .modal-slider button.prev,
 .modal-slider button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  padding: 6px 12px;
-  cursor: pointer;
-  border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
 }
-.modal-slider button.prev { left: 10px; }
-.modal-slider button.next { right: 10px; }
+
+.modal-slider button.prev {
+    left: 10px;
+}
+
+.modal-slider button.next {
+    right: 10px;
+}
 
 /* -------------------
    レスポンシブ (1000px以下)
@@ -583,6 +611,28 @@ a {
 
     .grid-box {
         aspect-ratio: 10/12;
+    }
+
+    /* ===== スマホでもボタンを中央に固定 ===== */
+    .btn-area {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .btn-area a {
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .btn-area a {
+        flex: 0 0 auto;
+        /* 幅を自動調整に */
+        text-align: center;
     }
 
     .footer {
