@@ -600,27 +600,37 @@ a {
 }
 
 /* -------------------
-   レスポンシブ (1000px以下)
+   レスポンシブ (768px以下)
 ------------------- */
+@media (max-width:768px) {
+  /* ヘッダーを縦並びにする */
+  .header {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 12px 0;
+  }
 
-@media (max-width:999px) {
-    .wrapper {
-        max-width: none;
-        padding: 2% 4%;
-    }
+  .header h1 {
+    width: 60%;
+    margin-bottom: 10px;
+  }
 
-    .header {
-        justify-content: space-between;
-    }
+  .header nav {
+    width: 100%;
+  }
 
-    .Portfolio-grid {
-        /* Gridを1列のみの設定 */
-        grid-template-columns: 1fr;
-    }
+  .header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 0;
+  }
 
-    .grid-box {
-        aspect-ratio: 10/12;
-    }
+  .header nav ul li a {
+    font-size: 1rem;
+  }
+}
 
     /* ===== スマホでもボタンを中央に固定 ===== */
     .btn-area {
