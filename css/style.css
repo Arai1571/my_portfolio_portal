@@ -152,17 +152,26 @@ a {
 /* -------------------
  Portfolios-area
  ------------------- */
-.Portfolios-area {
+.Portfolios-area  {
     padding: 2% 4%;
-}
-
-.Portfolios-area h2 {
     text-align: center;
     margin-bottom: 1.6%;
 }
 
+.DesignWorks-area  {
+    padding: 2% 4%;
+    text-align: center;
+    margin-bottom: 1.6%;
+}
+
+.VideoWorks-area {
+    padding: 2% 4%;
+    text-align: center;
+    margin-bottom: 1.6%;
+}
 
 .Portfolio-grid {
+    padding: 2% 4%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     /* レスポンシブ対応 */
