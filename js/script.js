@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const images = [
         'images/works/TheHistoryCleaner_Title.png',
         'images/works/TheHistoryCleaner_main1.png',
-        'images/works/robo_readme.png',   
+        'images/works/robo_readme.png',
         'images/works/escapedarkness_boss.png',
         'images/works/battlecart.jpg',
-        'images/works/jewelryhunter_image.png',    
+        'images/works/jewelryhunter_image.png',
     ];
     // --- 設定はここまで ---
 
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 startSlideShow();
             });
         });
-        
+
         startSlideShow();
     }
 
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // スクロール先の要素を取得 (hrefの値から#を取り除いてIDとして使用)
             const target = document.getElementById(href.slice(1));
-            
+
             // ターゲット要素が存在すれば、そこまでスムーズにスクロール
             if (target) {
                 target.scrollIntoView({
@@ -114,37 +114,37 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', logBodyWidth);
 
 
-// ==================================================
-// 4. トップへ戻るボタンのJS（このブロックを追記）
-// ==================================================
-// HTMLからボタン要素を取得
-const toTopButton = document.getElementById('to-top-button');
+    // ==================================================
+    // 4. トップへ戻るボタンのJS（このブロックを追記）
+    // ==================================================
+    // HTMLからボタン要素を取得
+    const toTopButton = document.getElementById('to-top-button');
 
-// スクロールイベントを監視
-window.addEventListener('scroll', () => {
-    // 現在のスクロール量を取得
-    const scrollAmount = window.scrollY;
+    // スクロールイベントを監視
+    window.addEventListener('scroll', () => {
+        // 現在のスクロール量を取得
+        const scrollAmount = window.scrollY;
 
-    // 300pxより多くスクロールされていたら.showクラスを付けて表示
-    if (scrollAmount > 300) {
-        toTopButton.classList.add('show');
-    } else {
-        // そうでなければ.showクラスを外して非表示
-        toTopButton.classList.remove('show');
-    }
-});
-
-// ボタンがクリックされた時の処理
-toTopButton.addEventListener('click', (e) => {
-    // aタグのデフォルトの動作（#がURLにつく）をキャンセル
-    e.preventDefault();
-
-    // ページの一番上（top: 0）までスムーズにスクロール
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+        // 300pxより多くスクロールされていたら.showクラスを付けて表示
+        if (scrollAmount > 300) {
+            toTopButton.classList.add('show');
+        } else {
+            // そうでなければ.showクラスを外して非表示
+            toTopButton.classList.remove('show');
+        }
     });
-});
+
+    // ボタンがクリックされた時の処理
+    toTopButton.addEventListener('click', (e) => {
+        // aタグのデフォルトの動作（#がURLにつく）をキャンセル
+        e.preventDefault();
+
+        // ページの一番上（top: 0）までスムーズにスクロール
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
 });
 
@@ -155,45 +155,65 @@ const closeButtons = document.querySelectorAll('.modal .close');
 
 // カードクリック時 → 対応モーダル開く
 gridBoxes.forEach(box => {
-  box.addEventListener('click', () => {
-    const targetId = box.dataset.modal;
-    const modal = document.getElementById(`modal-${targetId}`);
-    if (modal) modal.style.display = 'flex';
-  });
+    box.addEventListener('click', () => {
+        const targetId = box.dataset.modal;
+        const modal = document.getElementById(`modal-${targetId}`);
+        if (modal) modal.style.display = 'flex';
+    });
 });
 
 // 閉じるボタン
 closeButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.closest('.modal').style.display = 'none';
-  });
+    btn.addEventListener('click', () => {
+        btn.closest('.modal').style.display = 'none';
+    });
 });
 
 // 背景クリックでも閉じる
 modals.forEach(modal => {
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.style.display = 'none';
-  });
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+    });
 });
 
 // ===== モーダル内スライダー機能 =====
 document.querySelectorAll('.modal').forEach(modal => {
-  const slides = modal.querySelectorAll('.slide');
-  const nextBtn = modal.querySelector('.next');
-  const prevBtn = modal.querySelector('.prev');
-  let current = 0;
+    const slides = modal.querySelectorAll('.slide');
+    const nextBtn = modal.querySelector('.next');
+    const prevBtn = modal.querySelector('.prev');
+    let current = 0;
 
-  if (!slides.length) return;
+    if (!slides.length) return;
 
-  nextBtn.addEventListener('click', () => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  });
+    nextBtn.addEventListener('click', () => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    });
 
-  prevBtn.addEventListener('click', () => {
-    slides[current].classList.remove('active');
-    current = (current - 1 + slides.length) % slides.length;
-    slides[current].classList.add('active');
-  });
+    prevBtn.addEventListener('click', () => {
+        slides[current].classList.remove('active');
+        current = (current - 1 + slides.length) % slides.length;
+        slides[current].classList.add('active');
+    });
+});
+
+// ハンバーガーメニューの開閉
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('.header nav');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('open');
+});
+
+// 下まで行くボタン
+const toBottomBtn = document.getElementById('to-bottom-button');
+
+toBottomBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
 });

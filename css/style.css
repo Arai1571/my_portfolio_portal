@@ -77,6 +77,10 @@ a {
     font-size: .9rem;
 }
 
+.header nav ul li a:hover {
+    color: #00e5ff;
+    text-shadow: 0 0 8px rgba(0, 195, 255, 0.6);
+}
 
 /* -------------------
  main 
@@ -92,6 +96,7 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    z-index: 0;
 }
 
 .slide-area {
@@ -152,13 +157,13 @@ a {
 /* -------------------
  Portfolios-area
  ------------------- */
-.Portfolios-area  {
+.Portfolios-area {
     padding: 2% 4%;
     text-align: center;
     margin-bottom: 1.6%;
 }
 
-.DesignWorks-area  {
+.DesignWorks-area {
     padding: 2% 4%;
     text-align: center;
     margin-bottom: 1.6%;
@@ -352,18 +357,16 @@ a {
  about-area
  ------------------- */
 .about-area {
-    /* 縦並び、左右上下中央揃え */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2% 4%;
 }
 
 .about-area img {
     margin: 80px 0 20px;
-    /* 少し小さめの画像にする */
     width: 50%;
-    /* まん丸にする */
     border-radius: 50%;
 }
 
@@ -603,58 +606,212 @@ a {
    レスポンシブ (768px以下)
 ------------------- */
 @media (max-width:768px) {
-  /* ヘッダーを縦並びにする */
-  .header {
+
+    /* ヘッダーを縦並びにする */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 12px 0;
+    }
+
+    .header h1 {
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+    .header nav {
+        width: 100%;
+    }
+
+    .header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        padding: 0;
+    }
+
+    .header nav ul li a {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:768px) {
+
+  /* 各グリッドカードの高さを自動にして、重なりを防ぐ */
+  .grid-box {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
     height: auto;
-    padding: 12px 0;
+    aspect-ratio: auto;
+    padding-bottom: 20px;
   }
 
-  .header h1 {
-    width: 60%;
-    margin-bottom: 10px;
+  /* テキスト部分が上、ボタンは下に自然に並ぶ */
+  .grid-box p {
+    margin-bottom: 16px;
+    min-height: auto;
   }
 
-  .header nav {
-    width: 100%;
-  }
-
-  .header nav ul {
-    flex-direction: column;
+  /* ボタンエリアの位置を整える */
+  .btn-area {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
     gap: 10px;
-    align-items: center;
-    padding: 0;
+    flex-wrap: wrap;
   }
 
-  .header nav ul li a {
-    font-size: 1rem;
+  .btn-area a {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 25px;
+  }
+
+  /* 画像の下に十分な余白を確保 */
+  .grid-box img {
+    margin-bottom: 12px;
   }
 }
 
-    /* ===== スマホでもボタンを中央に固定 ===== */
-    .btn-area {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 10px !important;
-        width: 100% !important;
-        text-align: center !important;
+/* ===== スマホでもボタンを中央に固定 ===== */
+.btn-area {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.btn-area a {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.btn-area a {
+    flex: 0 0 auto;
+    /* 幅を自動調整に */
+    text-align: center;
+}
+
+.footer {
+    height: 150px;
+}
+
+/* ===============================
+   ハンバーガーボタン（スマホ用）
+================================ */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* 開閉アニメーション */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ===============================
+   ナビゲーション（スマホ時）
+================================ */
+@media (max-width:768px) {
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 22px;
+        right: 20px;
+        z-index: 3000;
     }
 
-    .btn-area a {
-        display: inline-block;
-        text-align: center;
-        margin: 0 auto;
+    .header nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100%;
+        background: rgba(20, 20, 20, 0.95);
+        backdrop-filter: blur(6px);
+        transition: right 0.4s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3000;
     }
 
-    .btn-area a {
-        flex: 0 0 auto;
-        /* 幅を自動調整に */
-        text-align: center;
+    .header nav.open {
+        right: 0;
     }
 
-    .footer {
-        height: 150px;
+    .header nav ul {
+        flex-direction: column;
+        gap: 24px;
     }
+
+    .header nav ul li a {
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+    .header nav ul li a:hover {
+        color: #00e5ff;
+        text-shadow: 0 0 8px rgba(0, 195, 255, 0.7);
+    }
+}
+
+
+
+/* ===============================
+   下まで行くボタン
+================================ */
+#to-bottom-button {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#to-bottom-button:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+/* ↓矢印マーク */
+#to-bottom-button::before {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: translate(-50%, -40%) rotate(45deg);
 }
